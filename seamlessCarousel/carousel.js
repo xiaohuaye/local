@@ -4,11 +4,14 @@ $('.imges>img:nth-child(1)').siblings().addClass('enter')
 
 var size = $('.imges').children().length
 var n = 0
+var timer = setTimer()
 
 setInterval(()=>{
 	let x = n%size
 		CurrentChangeLeave(x)
 		nextEnterChangeCurrentAndOthersChangeEnter(x,size)
+	let index = $('.current').index()
+		redSpot(index)
 	n = n + 1
 },3000) 
 
@@ -30,4 +33,8 @@ function nextEnterChangeCurrentAndOthersChangeEnter(y,n){
 			$('.imges>img:nth-child(1)').siblings().not('.imges>img:nth-child('+ (y+1) +')')
 			.removeClass('leave current enter').addClass('enter')
 		}
+}
+function redSpot(y){
+	$('.localPic>span').removeClass('red')
+	$('.localPic>span:nth-child('+ (y+1) +')').addClass('red')
 }
