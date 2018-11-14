@@ -23,7 +23,30 @@ body{
 .imges{
     display: flex;
     flex-direction: row;
+    position: relative;
 }
+.leave{
+    position: absolute;
+    top: 0;
+    left: -500px;
+    transition: left 0.5s;
+    z-index: 0;
+}
+.current{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: left 0.5s;
+    z-index: 1;
+} 
+.enter{
+    position: absolute;
+    top: 0;
+    left: 500px; 
+    transition: left 0.5s; 
+    z-index: 0; 
+}
+
 .buttons>button{
     margin: 10px;
 }
